@@ -45,20 +45,24 @@ render() {
     handleClick(event){
         var apiBaseUrl = "http://localhost:8080/api/v1";
         var self = this;
-        var payload={
-            "email":this.state.username,
-            "password":this.state.password
-        }
-        axios.post(apiBaseUrl+'login', payload)
+        var params = new URLSearchParams();
+        params.append('companyName', this.state.username);
+        params.append('password', this.state.password);
+        axios.post(apiBaseUrl+'/login', params, {
+            headers: {
+                "Content-Type": "application/x-www-form-urlencoded"
+            }
+        })
         .then(function (response) {
             console.log(response);
-            if(response.data.code == 200){
+            console.log(response.status)
+            if(response.status == 200){
                 console.log("Login successfull");
                 var uploadScreen=[];
                 uploadScreen.push(<UploadScreen appContext={self.props.appContext}/>)
                 self.props.appContext.setState({loginPage:[],uploadScreen:uploadScreen})
             }
-            else if(response.data.code == 204){
+            else if(response.status == 204){
                 console.log("Username password do not match");
                 alert("username password do not match")
             }

@@ -9,8 +9,9 @@ class Register extends Component {
   constructor(props){
     super(props);
     this.state={
-      first_name:'',
-      last_name:'',
+      name:'',
+      company_name:'',
+      contact_number:'',
       email:'',
       password:''
     }
@@ -24,16 +25,22 @@ class Register extends Component {
              title="Register"
            />
            <TextField
-             hintText="Enter your First Name"
-             floatingLabelText="First Name"
-             onChange = {(event,newValue) => this.setState({first_name:newValue})}
+             hintText="Enter your Name"
+             floatingLabelText="Name"
+             onChange = {(event,newValue) => this.setState({name:newValue})}
              />
            <br/>
            <TextField
-             hintText="Enter your Last Name"
-             floatingLabelText="Last Name"
-             onChange = {(event,newValue) => this.setState({last_name:newValue})}
+             hintText="Enter your Companies Name"
+             floatingLabelText="Company Name"
+             onChange = {(event,newValue) => this.setState({company_name:newValue})}
              />
+           <br/>
+           <TextField
+             hintText="Enter your Contact Number"
+             floatingLabelText="Contact Number"
+             onChange = {(event,newValue) => this.setState({contact_number:newValue})}
+           />
            <br/>
            <TextField
              hintText="Enter your Email"
@@ -62,25 +69,30 @@ class Register extends Component {
       //To be done:check for empty values before hitting submit
       var self = this;
       var payload={
-      "first_name": this.state.first_name,
-      "last_name":this.state.last_name,
-      "email":this.state.email,
-      "password":this.state.password
+          name: this.state.name,
+          companyName:this.state.company_name,
+          contactNumber: this.state.contact_number,
+          email:this.state.email,
+          password:this.state.password
       }
-      axios.post(apiBaseUrl+'/signup', payload)
+      axios.post(apiBaseUrl+'/signup', payload, {
+                  headers: {
+                        "Content-Type": "application/json"
+                  }
+              })
      .then(function (response) {
        console.log(response);
-       if(response.data.code == 200){
-        //  console.log("registration successfull");
-         var loginscreen=[];
-         loginscreen.push(<Login parentContext={this}/>);
-         var loginmessage = "Not Registered yet.Go to registration";
-         self.props.parentContext.setState({loginscreen:loginscreen,
-         loginmessage:loginmessage,
-         buttonLabel:"Register",
-         isLogin:true
-          });
-       }
+//       if(response.data.code == 200){
+//        //  console.log("registration successfull");
+//         var loginscreen=[];
+//         loginscreen.push(<Login parentContext={this}/>);
+//         var loginmessage = "Not Registered yet.Go to registration";
+//         self.props.parentContext.setState({loginscreen:loginscreen,
+//         loginmessage:loginmessage,
+//         buttonLabel:"Register",
+//         isLogin:true
+//          });
+//       }
      })
      .catch(function (error) {
        console.log(error);
