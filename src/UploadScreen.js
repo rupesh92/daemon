@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
-import './App.css';
+import './css/App.css';
 /*
 Screen:LoginScreen
-Loginscreen is the main screen which the user is shown on first visit to page and after
+LoginComponent is the main screen which the user is shown on first visit to page and after
 hitting logout
 */
-import LoginScreen from './Loginscreen';
+import LoginScreen from './LoginComponent';
 /*
 Module:Material-UI
 Material-UI is used for designing ui of the app

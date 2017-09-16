@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import RaisedButton from 'material-ui/RaisedButton';
-import Login from './Login';
+import LoginForm from './LoginForm';
 import Register from './Register';
-class Loginscreen extends Component {
+class LoginComponent extends Component {
   constructor(props){
     super(props);
     this.state={
@@ -17,7 +17,7 @@ class Loginscreen extends Component {
   }
   componentWillMount(){
     var loginscreen=[];
-    loginscreen.push(<Login parentContext={this} appContext={this.props.parentContext}/>);
+    loginscreen.push(<LoginForm parentContext={this} appContext={this.props.parentContext}/>);
     var loginmessage = "Not registered yet, Register Now";
     this.setState({
                   loginscreen:loginscreen,
@@ -56,7 +56,7 @@ class Loginscreen extends Component {
       }
       else{
         var loginscreen=[];
-        loginscreen.push(<Login parentContext={this}/>);
+        loginscreen.push(<LoginForm parentContext={this}/>);
         loginmessage = "Not Registered ye? Go to registration";
         this.setState({
                        loginscreen:loginscreen,
@@ -70,4 +70,4 @@ class Loginscreen extends Component {
 const style = {
   margin: 15,
 };
-export default Loginscreen;
+export default LoginComponent;
