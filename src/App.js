@@ -9,20 +9,24 @@ class App extends Component {
   constructor(props){
     super(props);
     this.state={
-      loginPage:[]
+      loginPage:[],
+        userHomePage:[]
     }
   }
   componentWillMount(){
     var loginPage =[];
+
     loginPage.push(<LoginComponent parentContext={this}/>);
     this.setState({
                   loginPage:loginPage
+
                     })
   }
   render() {
     return (
       <div className="App">
         {this.state.loginPage}
+          {this.state.userHomePage}
       </div>
     );
   }

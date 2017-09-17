@@ -4,6 +4,7 @@ import AppBar from 'material-ui/AppBar';
 import RaisedButton from 'material-ui/RaisedButton';
 import TextField from 'material-ui/TextField';
 import axios from 'axios';
+import UserHomePage from "../UserHomePage";
 
 class LoginForm extends Component {
     constructor(props) {
@@ -45,6 +46,7 @@ class LoginForm extends Component {
 
 
     handleClick() {
+        var self = this;
         var apiBaseUrl = "http://localhost:8080/api/v1";
         var params = new URLSearchParams();
         params.append('companyName', this.state.username);
@@ -58,8 +60,12 @@ class LoginForm extends Component {
                 console.log(response);
                 console.log(response.status)
                 if (response.status == 200) {
-                    console.log("Login successful");
+                    console.log("Login successful " + response);
+                    console.log("Login successful " + response.name);
                     alert("Login successful");
+                    var userHomePage=[];
+                    userHomePage.push(<UserHomePage appContext={self.props.appContext}/>)
+                    self.props.appContext.setState({loginPage:[],userHomePage:userHomePage})
                 }
                 else if (response.status == 204) {
                     console.log("Username password do not match");
