@@ -1,12 +1,7 @@
 import React, {Component} from 'react';
 import './css/App.css';
-/*
-Screen:LoginScreen
-LoginComponent is the main screen which the user is shown on first visit to page and after
-hitting logout
-*/
+
 import LoginScreen from './login/LoginComponent';
-import axios from 'axios';
 
 
 class UserHomePage extends Component {
@@ -22,9 +17,6 @@ class UserHomePage extends Component {
     }
 
     componentWillMount() {
-        var self = this;
-
-
     }
 
     /*

@@ -72,7 +72,7 @@ class LoginForm extends Component {
                         console.log(check.name);
                         categories.push(check.name);
                     }
-debugger;
+                    debugger;
                     self.props.appContext.setState({
                         name: response.data.customer.name,
                         companyName: response.data.customer.companyName,
