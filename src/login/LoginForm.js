@@ -4,7 +4,6 @@ import AppBar from 'material-ui/AppBar';
 import RaisedButton from 'material-ui/RaisedButton';
 import TextField from 'material-ui/TextField';
 import axios from 'axios';
-import UploadScreen from './UploadScreen'
 
 class LoginForm extends Component {
     constructor(props) {
@@ -45,9 +44,8 @@ class LoginForm extends Component {
     }
 
 
-    handleClick(event) {
+    handleClick() {
         var apiBaseUrl = "http://localhost:8080/api/v1";
-        var self = this;
         var params = new URLSearchParams();
         params.append('companyName', this.state.username);
         params.append('password', this.state.password);
@@ -60,17 +58,15 @@ class LoginForm extends Component {
                 console.log(response);
                 console.log(response.status)
                 if (response.status == 200) {
-                    console.log("Login successfully");
-                    var uploadScreen = [];
-                    uploadScreen.push(<UploadScreen appContext={self.props.appContext}/>)
-                    self.props.appContext.setState({loginPage: [], uploadScreen: uploadScreen})
+                    console.log("Login successful");
+                    alert("Login successful");
                 }
                 else if (response.status == 204) {
                     console.log("Username password do not match");
-                    alert("username password do not match")
+                    alert("username password do not match");
                 }
                 else {
-                    console.log("Username does not exists");
+                    console.log("Username does not exist");
                     alert("Username does not exist");
                 }
             })

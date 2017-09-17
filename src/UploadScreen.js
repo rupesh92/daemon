@@ -5,7 +5,7 @@ Screen:LoginScreen
 LoginComponent is the main screen which the user is shown on first visit to page and after
 hitting logout
 */
-import LoginScreen from './LoginComponent';
+import LoginScreen from './login/LoginComponent';
 /*
 Module:Material-UI
 Material-UI is used for designing ui of the app
