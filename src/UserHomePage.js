@@ -34,31 +34,14 @@ class UserHomePage extends Component {
   constructor(props){
     super(props);
     this.state={
-      custId: 1,
-      name: '',
-      companyName: '',
-      draweropen:false,
-      printcount:10,
-      printingmessage:'',
-      printButtonDisabled:false
+      custId: props.appContext.state.custId,
+      name: props.appContext.state.name,
+      companyName: props.appContext.state.companyName,
+      products:[]
     }
   }
   componentWillMount(){
-    // console.log("prop values",this.props.role);
-    var printcount;
-    //set upload limit based on user role
-    if(this.props.role){
-      if(this.props.role == 'student'){
-        printcount = 5;
-      }
-      else if(this.props.role == 'teacher'){
-        printcount =10;
-      }
-    }
-    this.setState({printcount,role:this.props.role});
   }
-
-
 
 /*
   Function:handleLogout
@@ -72,9 +55,11 @@ handleLogout(event){
   this.props.appContext.setState({loginPage:loginPage,uploadScreen:[]})
 }
   render() {
+  debugger;
     return (
       <div className="App">
-          Welcome to your account in Ekarth !
+          Hi {this.state.name}. We wish you all the best with {this.state.companyName}
+
       </div>
     );
   }

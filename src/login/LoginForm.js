@@ -49,6 +49,7 @@ class LoginForm extends Component {
         var self = this;
         var apiBaseUrl = "http://localhost:8080/api/v1";
         var params = new URLSearchParams();
+        debugger;
         params.append('companyName', this.state.username);
         params.append('password', this.state.password);
         axios.post(apiBaseUrl + '/login', params, {
@@ -57,15 +58,20 @@ class LoginForm extends Component {
             }
         })
             .then(function (response) {
+                debugger;
                 console.log(response);
                 console.log(response.status)
                 if (response.status == 200) {
-                    console.log("Login successful " + response);
-                    console.log("Login successful " + response.name);
+                    console.log("Login successful " + response.data);
+                    console.log("Login successful " + response.data.name);
                     alert("Login successful");
+
                     var userHomePage=[];
+
+                    self.props.appContext.setState({name:response.data.name,companyName:response.data.companyName});
                     userHomePage.push(<UserHomePage appContext={self.props.appContext}/>)
-                    self.props.appContext.setState({loginPage:[],userHomePage:userHomePage})
+                    self.props.appContext.setState({loginPage:[],userHomePage:userHomePage});
+
                 }
                 else if (response.status == 204) {
                     console.log("Username password do not match");
