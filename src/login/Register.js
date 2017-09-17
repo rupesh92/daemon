@@ -83,16 +83,8 @@ class Register extends Component {
               })
      .then(function (response) {
        console.log(response);
-      if(response.data.code == 200){
+      if(response.status == 201){
          console.log("registration successful");
-        // var loginForm=[];
-        // loginForm.push(<Login parentContext={this}/>);
-        // var registerMessage = "Not Registered yet.Go to registration";
-        // self.props.parentContext.setState({loginForm:loginForm,
-        // registerMessage:registerMessage,
-        // buttonLabel:"Register",
-        // // isLogin:false
-        //  });
       }
      })
      .catch(function (error) {

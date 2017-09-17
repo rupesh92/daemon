@@ -26,7 +26,7 @@ class LoginComponent extends Component {
   }
   render() {
     return (
-      <div className="loginscreen">
+      <div className="loginScreen">
         {this.state.loginForm}
         <div>
           {this.state.registerMessage}
@@ -43,25 +43,25 @@ class LoginComponent extends Component {
   handleClick(){
       var registerMessage;
       if(!this.state.isLogin){
-        var loginscreen=[];
-        loginscreen.push(<Register parentContext={this}/>);
+        var loginForm=[];
+        loginForm.push(<Register parentContext={this}/>);
         registerMessage = "Already registered? Go to Login";
         this.setState({
-                       loginForm:loginscreen,
+                       loginForm:loginForm,
                        registerMessage:registerMessage,
                        buttonLabel:"Login",
-                       isLogin:false
+                       isLogin:true
                      })
       }
       else{
-        var loginscreen=[];
-        loginscreen.push(<LoginForm parentContext={this}/>);
+        var loginForm=[];
+        loginForm.push(<LoginForm parentContext={this}/>);
         registerMessage = "Not Registered yet? Go to registration";
         this.setState({
-                       loginForm:loginscreen,
+                       loginForm:loginForm,
                        registerMessage:registerMessage,
                        buttonLabel:"Register",
-                       isLogin:true
+                       isLogin:false
                      })
       }
     }
