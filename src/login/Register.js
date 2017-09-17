@@ -4,7 +4,6 @@ import AppBar from 'material-ui/AppBar';
 import RaisedButton from 'material-ui/RaisedButton';
 import TextField from 'material-ui/TextField';
 import axios from 'axios';
-import LoginForm from "./LoginForm";
 class Register extends Component {
   constructor(props){
     super(props);

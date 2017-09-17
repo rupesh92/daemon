@@ -49,7 +49,7 @@ class LoginForm extends Component {
         var self = this;
         var apiBaseUrl = "http://localhost:8080/api/v1";
         var params = new URLSearchParams();
-        debugger;
+        var userHomePage = [];
         params.append('companyName', this.state.username);
         params.append('password', this.state.password);
         axios.post(apiBaseUrl + '/login', params, {
@@ -58,19 +58,33 @@ class LoginForm extends Component {
             }
         })
             .then(function (response) {
-                debugger;
                 console.log(response);
-                console.log(response.status)
+                debugger;
                 if (response.status == 200) {
                     console.log("Login successful " + response.data);
                     console.log("Login successful " + response.data.name);
                     alert("Login successful");
 
-                    var userHomePage=[];
+                    var x = response.data.categories.length;
+                    var categories = [];
+                    for (var i = 0; i < x; i++) {
+                        var check = response.data.categories[i];
+                        console.log(check.name);
+                        categories.push(check.name);
+                    }
+debugger;
+                    self.props.appContext.setState({
+                        name: response.data.customer.name,
+                        companyName: response.data.customer.companyName,
+                        custId: response.data.customer.custId,
+                        categories: categories
 
-                    self.props.appContext.setState({name:response.data.name,companyName:response.data.companyName});
+                    });
                     userHomePage.push(<UserHomePage appContext={self.props.appContext}/>)
-                    self.props.appContext.setState({loginPage:[],userHomePage:userHomePage});
+
+                    debugger;
+                    self.props.appContext.setState({loginPage: [], userHomePage: userHomePage});
+
 
                 }
                 else if (response.status == 204) {
@@ -85,6 +99,7 @@ class LoginForm extends Component {
             .catch(function (error) {
                 console.log(error);
             });
+
     }
 }
 
