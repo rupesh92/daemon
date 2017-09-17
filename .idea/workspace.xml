@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bc0c788d-9479-43a3-8c41-541c1ed6f766" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/login/LoginComponent.js" afterPath="$PROJECT_DIR$/src/login/LoginComponent.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/login/Register.js" afterPath="$PROJECT_DIR$/src/login/Register.js" />
     </list>
     <ignored path="daemon.iws" />
@@ -43,17 +42,17 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Register.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Register.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/login/Register.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="406">
-              <caret line="86" column="48" selection-start-line="86" selection-start-column="48" selection-end-line="86" selection-end-column="48" />
+            <state relative-caret-position="316">
+              <caret line="78" column="16" selection-start-line="78" selection-start-column="16" selection-end-line="78" selection-end-column="16" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="LoginComponent.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="LoginComponent.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/login/LoginComponent.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="420">
@@ -102,8 +101,8 @@
         <option value="$PROJECT_DIR$/src/Loginscreen.js" />
         <option value="$PROJECT_DIR$/src/Login.js" />
         <option value="$PROJECT_DIR$/src/Register.js" />
-        <option value="$PROJECT_DIR$/src/login/Register.js" />
         <option value="$PROJECT_DIR$/src/login/LoginComponent.js" />
+        <option value="$PROJECT_DIR$/src/login/Register.js" />
       </list>
     </option>
   </component>
@@ -610,18 +609,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/login/Register.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="406">
-          <caret line="86" column="48" selection-start-line="86" selection-start-column="48" selection-end-line="86" selection-end-column="48" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/login/LoginComponent.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="420">
           <caret line="28" column="28" selection-start-line="28" selection-start-column="28" selection-end-line="28" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/login/Register.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="316">
+          <caret line="78" column="16" selection-start-line="78" selection-start-column="16" selection-end-line="78" selection-end-column="16" />
           <folding />
         </state>
       </provider>

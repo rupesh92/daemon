@@ -75,12 +75,10 @@ class Register extends Component {
           passwordDigest:this.state.password
       }
       axios.post(apiBaseUrl+'/signup', payload, {
-                  headers: {
-                        "Content-Type": "application/json",
-                      "Access-Control-Allow-Headers": "*",
-                      "Access-Control-Allow-Origin" : "*"
-                  }
-              })
+          headers: {
+                "Content-Type": "application/json",
+          }
+      })
      .then(function (response) {
        console.log(response);
       if(response.status == 201){
