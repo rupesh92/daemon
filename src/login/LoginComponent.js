@@ -34,11 +34,11 @@ class LoginComponent extends Component {
                 <div>
                     {this.state.registerMessage}
                     <MuiThemeProvider>
-                        <div>
-                            <RaisedButton label={this.state.buttonLabel} primary={true} style={style}
-                                          onClick={(event) => this.handleClick(event)}/>
-                        </div>
-                    </MuiThemeProvider>
+                    <div>
+                        <RaisedButton label={this.state.buttonLabel} primary={true} style={style}
+                                      onClick={(event) => this.handleClick(event)}/>
+                    </div>
+                </MuiThemeProvider>
                 </div>
             </div>
         );

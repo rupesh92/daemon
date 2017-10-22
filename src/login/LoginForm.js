@@ -64,32 +64,22 @@ class LoginForm extends Component {
                     console.log("Login successful " + response.data);
                     console.log("Login successful " + response.data.name);
                     alert("Login successful");
-
-                    var x = response.data.categories.length;
-                    var categories = [];
-                    for (var i = 0; i < x; i++) {
-                        var check = response.data.categories[i];
-                        console.log(check.name);
-                        categories.push(check.name);
-                    }
-                    debugger;
+debugger;
                     self.props.appContext.setState({
                         name: response.data.customer.name,
                         companyName: response.data.customer.companyName,
                         custId: response.data.customer.custId,
-                        categories: categories
+                        categories: response.data.categories
 
                     });
                     userHomePage.push(<UserHomePage appContext={self.props.appContext}/>)
-
-                    debugger;
                     self.props.appContext.setState({loginPage: [], userHomePage: userHomePage});
 
 
                 }
                 else if (response.status == 204) {
                     console.log("Username password do not match");
-                    alert("username password do not match");
+                    alert("Username password do not match or, Username does not exist");
                 }
                 else {
                     console.log("Username does not exist");

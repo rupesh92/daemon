@@ -11,7 +11,8 @@ class App extends Component {
         super(props);
         this.state = {
             loginPage: [],
-            userHomePage: []
+            userHomePage: [],
+            productPage: []
         }
     }
 
@@ -30,6 +31,7 @@ class App extends Component {
             <div className="App">
                 {this.state.loginPage}
                 {this.state.userHomePage}
+                {this.state.productPage}
             </div>
         );
     }
